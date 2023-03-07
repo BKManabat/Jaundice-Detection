@@ -22,7 +22,7 @@ Upon having extracted the dominant colors within the identified skin region, the
 
 The code is written in Python and requires NumPy and OpenCV libraries to run. The code for each step is contained in separate files in the ```script``` folder and can be run independently or as a complete pipeline.
 
-```offset.py``` generates the offset values based on the loaded reference images\n
+```offset.py``` generates the offset values based on the loaded reference images;
 ```skinscan.py``` contains two functions, ```offset_frame``` and ```skin_detect```
 
 ```
