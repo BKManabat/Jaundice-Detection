@@ -25,7 +25,8 @@ The code is written in Python and requires NumPy and OpenCV libraries to run. Th
 ```offset.py``` generates the offset values based on the loaded reference images
 ```skinscan.py``` contains two functions, ```offset_frame``` and ```skin_detect```
 
-```import cv2
+```
+import cv2
 from skinscan import skin_detect, offset_frame
 
 # Load the image file
@@ -40,8 +41,8 @@ cv2.imshow('Dominant Color Detection', img)
 cv2.waitKey(0)
 
 # Destroy the window
-cv2.destroyAllWindows()```
-
+cv2.destroyAllWindows()
+```
 
 ## Credits
 
