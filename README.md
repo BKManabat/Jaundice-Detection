@@ -37,7 +37,7 @@ img = offset_frame(img)
 img = skin_detect(img)
 
 # Show the resulting image
-cv2.imshow('Dominant Color Detection', img)
+cv2.imshow('Jaundice Monitoring', img)
 cv2.waitKey(0)
 
 # Destroy the window
