@@ -1,6 +1,6 @@
 # Jaundice-Detection
 
-This repository contains code for monitoring jaundice in newborn infants using image processing algorithms. Detection of yellow pigmentation in skin through image processing is done in four steps: color correction, skin region identification, color palette extraction, and color thresholding. The code libraries used are NumPy and OpenCV respectively.
+This repository contains code for monitoring jaundice in newborn infants using image processing algorithms. Detection of yellow pigmentation in skin is done in four steps: color correction, skin region identification, color palette extraction, and color thresholding. The code libraries used are NumPy and OpenCV respectively.
 
 ## Color Correction
 
