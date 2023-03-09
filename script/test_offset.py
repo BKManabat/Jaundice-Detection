@@ -23,12 +23,9 @@ img2_adjusted1[:,:,2] = img2[:,:,2] - red_offset
 diff = cv2.imread("./assets/raw_offset.png")
 img2_adjusted2 = img2 - diff
 
-print(img2_adjusted1)
-print("SEPARATOR")
-print(img2_adjusted2)
-
 # Show the two methods side-by-side
 cv2.imshow("Method 1", img2_adjusted1)
+cv2.imwrite("Method1.png", img2_adjusted1)
 cv2.imshow("Method 2", img2_adjusted2)
 cv2.waitKey(0)
 cv2.destroyAllWindows()

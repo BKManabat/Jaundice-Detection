@@ -37,7 +37,6 @@ def skin_detect(frame):
     rule2 = np.abs(np.max([r, g, b], axis=0) - np.min([r, g, b], axis=0)) > 15
     rule3 = np.abs(r - g) > 15
     rule4 = (r > g) & (r > b)
-    # rule4 = (b > r) & (b > g)  # Adjusted rule
     rule5 = (r < (g + 100))
 
     skin_region = np.logical_and.reduce((rule1, rule2, rule3, rule4, rule5))
@@ -90,13 +89,8 @@ def skin_detect(frame):
             color = centers[cluster_idx].astype(int)
             color_palette = np.full((frame.shape[0], frame.shape[1], 3), fill_value=color, dtype=np.uint8)
 
-            # Check for yellow like color
-            check1 = color[1] - color[2] > 40
-            check2 = color[0] + color[1] > 400
-
-            print(f"{color}\t{check1}\t{check2}")
-
-            if check1 or check2:
+            # Check for yellow tinge
+            if color[1] - color[2] > 40:
                 # Add text to indicate yellowing detected
                 print("Yellowing detected")
                 cv2.putText(frame, "Yellowing detected", (10, 50), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 0), 2)
@@ -115,4 +109,14 @@ def skin_detect(frame):
         cv2.drawContours(frame, contours, max_area[2], (0, 255, 0), 3)
 
     frame = cv2.cvtColor(frame, cv2.COLOR_RGB2BGR)
+    return frame
+
+
+def yellow_mask(frame, yellow_opacity = 0.4):
+    # Create a yellow color layer with the same dimensions as the image
+    yellow_layer = frame.copy()
+    yellow_layer[:] = (0, 255, 255)  # BGR value for yellow is (0, 255, 255)
+
+    # Combine the original image and the yellow layer using addWeighted function
+    frame = cv2.addWeighted(frame, 1 - yellow_opacity, yellow_layer, yellow_opacity, 0)
     return frame
