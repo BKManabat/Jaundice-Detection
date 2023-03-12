@@ -8,7 +8,7 @@ Color correction is the process of adjusting the colors of an image to remove an
 
 ## Skin Region Identification
 
-A modified version of Kovac's rules is used to identify pixels as skin. The original model has four rules that define a pixel as skin based on its RGB values. However, Tomaz et al. noted issues with the original rules, which did not account for certain conditions such as high R-value and low G and B values, yellow-like colors, and darker skin tones. Therefore, the modified rules are designed to account for these conditions and increase the accuracy of skin identification.
+A modified version of Kovac's rules is used to identify pixels as skin. The original model has four rules that define a pixel as skin based on its RGB values. However, they did not account for certain conditions such as high R-value and low G and B values, yellow-like colors, and darker skin tones. Therefore, the modified rules are designed to account for these conditions and increase the accuracy of skin identification.
 
 ## Color Palette Extraction
 
